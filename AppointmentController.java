@@ -54,7 +54,7 @@ public class AppointmentController{
 
          int day = app.readDay("Shkruani diten ne Formatin: Monday ose Mon ose mo");
          int hour = app.readHour("Shruani oren ne Formatin: 0-24");
-         String d = app.getDay();
+         
          Appointment newAppointment = new Appointment(day, hour);
          
         
@@ -85,7 +85,7 @@ public class AppointmentController{
          appointments[dita][ora] =  null;
          int day = app.readDay("Shkruani diten e re per termin");
          int hour = app.readHour("Shkruani oren e re per termin");
-         app.getDay();
+        
          
 
          

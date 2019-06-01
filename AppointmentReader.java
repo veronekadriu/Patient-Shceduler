@@ -1,16 +1,19 @@
 import javax.swing.*;
+import java.util.*;;
 public class AppointmentReader{
    private String inputDay="";
    private String inputHour = "";
    private int day;
    private int hour;
    private String input="";
+   private boolean ok = false;
 
    
   
    
    
    public int readDay(String message){
+   
      inputDay = JOptionPane.showInputDialog(message).trim().toUpperCase();
     if((inputDay != null && ("".equals(inputDay))))   {
      readDay("Shkruani diten perseri.  Formati: Monday, mon, mo...");
@@ -20,7 +23,7 @@ public class AppointmentReader{
    
     
     else{
-   
+      
    
    switch(inputDay){
          case "MONDAY": day=0;
@@ -68,17 +71,28 @@ public class AppointmentReader{
                         
             
         
-        }}
-}
+        }
+         
+        
+        }
+}     
+      Calendar calendar = new GregorianCalendar();
+      int j = calendar.get(Calendar.DAY_OF_WEEK);
+      
+      if((j-2) > day){
+      System.out.println((j-2));
+      System.out.println(day);
+            readDay("Ju mund te lini termine vetem deri ne fund te kesaj jave dhe vetem ne te ardhmen. Provoni perseri");
+       }
+      else if((j-2) == day){
+         JOptionPane.showMessageDialog(null, "Jeni duke u munduar te lini termin sot. Shikojeni oren. Mund te lini termine vetem ne te ardhmen dhe vetem brenda javes.");
+         ok = true;
+      }
         return day;
         
         
 }
 
- public String getDay(){
-   
-   return inputDay;
-   }
 
   public int readHour(String message){
     inputHour = JOptionPane.showInputDialog(message);
@@ -95,7 +109,21 @@ public class AppointmentReader{
       hour = -1;
       readHour("Provoni oren perseri. Formati: 0-24");
    }
-        }  
+    
+        }
+        
+      if(ok){
+     Calendar calendar = new GregorianCalendar();
+      int j = calendar.get(Calendar.HOUR_OF_DAY);
+      if(j >hour){
+       hour = -1;
+      readHour("Mund te lini termine vetem ne te ardhmen. Zgjedhni oren perseri!");
+       }
+       
+      
+      }  
+      
+     
    return hour;
 }
 }

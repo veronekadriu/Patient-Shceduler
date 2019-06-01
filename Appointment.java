@@ -1,7 +1,7 @@
 public class Appointment {
    public int day;
    public int hour;
-   private Key id;
+   
    public Appointment(int day, int hour) {
       this.day = day;
       this.hour = hour;

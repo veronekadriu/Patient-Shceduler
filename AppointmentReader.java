@@ -1,3 +1,4 @@
+/** Klasa AppointmentReader lexon komanden e dites dhe te ores dhe i kontrollon nese ato jane ne te ardhmen **/ 
 import javax.swing.*;
 import java.util.*;;
 public class AppointmentReader{

@@ -1,3 +1,4 @@
+/** Klasa AppointmentController ben krijim, ndryshimin, fshirjen dhe printimin e termineve*/ 
 import javax.swing.*;
 public class AppointmentController{
 

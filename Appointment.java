@@ -1,3 +1,4 @@
+/** Klasa Appointment pen kthimin e ores dhe dites per nje termin te caktuar*/ 
 public class Appointment {
    public int day;
    public int hour;
